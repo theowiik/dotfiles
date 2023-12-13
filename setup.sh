@@ -1,29 +1,27 @@
 #!/bin/bash
 
-# Updating the system
+run_apps=false
+
+# === Updating the system ===
 echo "Updating Fedora system..."
+sudo dnf check-update -y
 sudo dnf update -y
 
-# Installing bspwm
+# === Installing bspwm ===
 echo "Installing bspwm..."
 sudo dnf install bspwm -y
 
-# Installing Brave Browser
-echo "Installing Brave Browser..."
+# === Installing apps ===
+if [ "$run_apps" = true ]; then
+  echo "Running apps.sh..."
+  source ./apps.sh
+fi
 
-sudo dnf install dnf-plugins-core -y
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo -y
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-sudo dnf install brave-browser -y
-
-echo "Opening Filen Desktop App download page..."
-xdg-open "https://filen.io/apps/desktop" &
-
-# Installing Zsh
+# === Installing Zsh ===
 echo "Installing Zsh..."
 sudo dnf install zsh -y
 
-# Installing Oh My Zsh
+# === Installing Oh My Zsh ===
 echo "Installing Oh My Zsh..."
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
