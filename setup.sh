@@ -1,11 +1,15 @@
 #!/bin/bash
 
 run_apps=false
+update_everything=false
 
 # === Updating the system ===
-echo "Updating Fedora system..."
 sudo dnf check-update -y
-sudo dnf update -y
+
+if [ "$update_everything" = true ]; then
+  echo "Updating everything..."
+  sudo dnf upgrade -y
+fi
 
 # === Installing bspwm ===
 echo "Installing bspwm..."
