@@ -4,17 +4,6 @@
 echo "Updating Fedora system..."
 sudo dnf update -y
 
-# Installing Zsh
-echo "Installing Zsh..."
-sudo dnf install zsh -y
-
-# Installing Oh My Zsh
-echo "Installing Oh My Zsh..."
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
-# Setting Zsh as the default shell
-chsh -s $(which zsh)
-
 # Installing bspwm
 echo "Installing bspwm..."
 sudo dnf install bspwm -y
@@ -29,5 +18,16 @@ sudo dnf install brave-browser -y
 
 echo "Opening Filen Desktop App download page..."
 xdg-open "https://filen.io/apps/desktop" &
+
+# Installing Zsh
+echo "Installing Zsh..."
+sudo dnf install zsh -y
+
+# Installing Oh My Zsh
+echo "Installing Oh My Zsh..."
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+# Setting Zsh as the default shell
+chsh -s $(which zsh)
 
 echo "Setup completed!"
