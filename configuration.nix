@@ -28,9 +28,12 @@
   # Nix Configuration
   # ===========================
   nixpkgs.config.allowUnfree = true;
-  
+
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   # ===========================
@@ -94,6 +97,8 @@
   # System Packages
   # ===========================
   environment.systemPackages = with pkgs; [
+    arandr
+
     # Editors & Development
     vscode
     vim
@@ -102,29 +107,30 @@
     # Shell & CLI Tools
     zsh
     neofetch
+    claude-code
 
     # Browsers
     firefox
 
     # Hyprland & Wayland Essentials
-    foot              # Terminal
-    waybar            # Status bar
-    wofi              # Application launcher
-    dunst             # Notifications
-    grim              # Screenshot tool
-    slurp             # Screen area selector
-    wl-clipboard      # Wayland clipboard utilities
-    swaylock          # Screen locker
-    hyprpaper         # Wallpaper manager
-    wlsunset          # Blue light filter
-    brightnessctl     # Brightness control
-    playerctl         # Media control
+    foot # Terminal
+    waybar # Status bar
+    wofi # Application launcher
+    dunst # Notifications
+    grim # Screenshot tool
+    slurp # Screen area selector
+    wl-clipboard # Wayland clipboard utilities
+    swaylock # Screen locker
+    hyprpaper # Wallpaper manager
+    wlsunset # Blue light filter
+    brightnessctl # Brightness control
+    playerctl # Media control
   ];
 
   # ===========================
   # Services
   # ===========================
-  
+
   # VMware Guest Support
   virtualisation.vmware.guest.enable = true;
 

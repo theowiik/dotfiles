@@ -49,8 +49,9 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    
+
     shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
       ll = "eza -l";
       la = "eza -la";
       ".." = "cd ..";
@@ -59,7 +60,10 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "z" ];
+      plugins = [
+        "git"
+        "z"
+      ];
       theme = "robbyrussell";
     };
   };
