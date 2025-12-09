@@ -1,0 +1,9 @@
+# Result symlinks from nix-build
+result
+result-*
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
