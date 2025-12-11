@@ -56,6 +56,8 @@
       la = "eza -la";
       ".." = "cd ..";
       "..." = "cd ../..";
+      "dev-nixos" = "sudo chown -R oet:users /etc/nixos";
+      "dev-nixos-exit" = "sudo chown -R root:root /etc/nixos";
     };
 
     oh-my-zsh = {
