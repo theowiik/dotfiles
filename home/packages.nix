@@ -8,14 +8,18 @@
     # CLI Tools
     htop
     ripgrep
-    fd
     bat
+    fd
     eza
     neofetch
+    tree
+    cowsay
 
     # Editors & Development
     vscode
     vim
+    micro
+    helix
 
     # Browsers
     firefox
